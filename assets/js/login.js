@@ -26,6 +26,7 @@ $('#form_reg').on('submit', function (e) {
             return layer.msg(res.message)
         }
         layer.msg('注册成功，请登录！')
+
         // 模拟人的点击行为
         $('#link_login').click()
     })
@@ -43,6 +44,7 @@ $('#form_login').on('submit', function (e) {
                 return layer.msg('登陆失败')
             }
             layer.msg('登陆成功')
+            localStorage.setItem('token', res.token)
             // console.log(res.token);
             location.href = 'index.html'
         }
